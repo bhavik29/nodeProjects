@@ -26,7 +26,13 @@ if(command === 'add'){
   var message = noteRemoved ? "Note Removed" : "Note not found";
   console.log(message);
 }else if(command === 'read'){
-  notes.readNote(argv.title);
+  var note = notes.readNote(argv.title);
+
+  if (typeof note === 'undefined') {
+    console.log('No note found with the title');
+  }else{
+    console.log(`Note Found!\nTitle: ${note[0].title}\nBody: ${note[0].body}`);
+  }
 }else{
   console.log('Command not recognised');
 }
