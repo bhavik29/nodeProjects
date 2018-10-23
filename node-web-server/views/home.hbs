@@ -6,10 +6,9 @@
     <title>Homepage of the website</title>
   </head>
   <body>
-  <h1>{{pageTitle}}</h1>
-  <p>{{pageMessage}}</p>
-  <footer>
-    <p>Copyright {{currentYear}}</p>
-  </footer>
+  {{> header}}
+  <p>{{screamIt pageMessage}}</p>
+
+  {{> footer}}
   </body>
 </html>
